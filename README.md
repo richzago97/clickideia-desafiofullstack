@@ -1,1 +1,0 @@
-# clickideia-desafiofullstack
