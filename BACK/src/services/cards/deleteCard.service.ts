@@ -1,10 +1,11 @@
+import { Repository } from "typeorm";
 import { AppDataSource } from "../../data-source";
 import { Card } from "../../entities/cards.entity";
 import { AppError } from "../../errors/appError";
 import { listCardsService } from "./listCards.service";
 
 const deleteCardService = async (cardId: string) => {
-    const cardRepository = AppDataSource.getRepository(Card);
+    const cardRepository: Repository<Card> = AppDataSource.getRepository(Card);
 
     const findCard = await cardRepository.findOne({
         where: { id: cardId },

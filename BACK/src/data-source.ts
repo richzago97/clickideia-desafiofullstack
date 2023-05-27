@@ -24,17 +24,4 @@ const dataSourceConfig = (): DataSourceOptions => {
     };
 };
 
-// export const AppDataSource = new DataSource({
-//     type: "postgres",
-//     host: process.env.POSTGRES_HOST,
-//     port: 5432,
-//     username: process.env.POSTGRES_USER,
-//     password: process.env.POSTGRES_PASSWORD,
-//     database: process.env.POSTGRES_DB_NAME,
-//     logging: true,
-//     synchronize: false,
-//     entities: [Card],
-//     migrations: ["initialMigration1685140942709"],
-// });
-
 export const AppDataSource = new DataSource(dataSourceConfig());

@@ -1,9 +1,11 @@
 import { Card } from "../../entities/cards.entity";
 import { AppDataSource } from "../../data-source";
-const createCardService = async (data: any) => {
-    const cardRepo = AppDataSource.getRepository(Card);
+import { CardData } from "../../interfaces/cards.interface";
+import { Repository } from "typeorm";
+const createCardService = async (data: CardData): Promise<Card> => {
+    const cardRepo: Repository<Card> = AppDataSource.getRepository(Card);
 
-    const card = cardRepo.create(data);
+    const card: Card = cardRepo.create(data);
 
     await cardRepo.save(card);
 
