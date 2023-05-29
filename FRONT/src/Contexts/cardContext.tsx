@@ -37,6 +37,27 @@ export const CardsProvider = ({ children }: IProvider) => {
     const [loading, setLoading] = useState(true);
     const [editMode, setEditMode] = useState(false);
 
+    const fetchCards = async () => {
+        try {
+            const response = await api.get("/cards", {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+
+            const responseData = response.data;
+
+            if (responseData && responseData.length > 0) {
+                setCards(responseData);
+                localStorage.setItem("cards", JSON.stringify(responseData));
+            }
+        } catch (error) {
+            console.error("Erro ao obter os cards:", error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
     useEffect(() => {
         const login = async () => {
             try {
@@ -55,27 +76,6 @@ export const CardsProvider = ({ children }: IProvider) => {
 
         login();
 
-        const fetchCards = async () => {
-            try {
-                const response = await api.get("/cards", {
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                    },
-                });
-
-                const responseData = response.data;
-
-                if (responseData && responseData.length > 0) {
-                    setCards(responseData);
-                    localStorage.setItem("cards", JSON.stringify(responseData));
-                }
-            } catch (error) {
-                console.error("Erro ao obter os cards:", error);
-            } finally {
-                setLoading(false);
-            }
-        };
-
         if (token) {
             fetchCards();
         }
@@ -83,84 +83,66 @@ export const CardsProvider = ({ children }: IProvider) => {
 
     const addCard = async (card: CardProps) => {
         try {
-            // Definir a propriedade 'lista' como 'To Do' antes de criar o card
             card.lista = "To Do";
-            // Fazer a requisição para criar o card na API
+
             const response = await api.post("/cards", card, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
             });
 
-            // Obtém o card criado a partir da resposta da API
             const createdCard = response.data;
 
-            // Adicionar o card criado ao contexto de cards
-            setCards([...cards, createdCard]);
-
+            setCards((prevCards) => [...prevCards, createdCard]);
             localStorage.setItem(
                 "cards",
                 JSON.stringify([...cards, createdCard])
             );
+
+            window.location.reload();
         } catch (error) {
             console.error("Erro ao criar o card:", error);
         }
     };
 
-    const deleteCard = async () => {
+    const deleteCard = async (cardId: string) => {
         try {
-            const cardId = cards[currentCardIndex]?.id;
+            await api.delete(`/cards/${cardId}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
 
-            if (cardId) {
-                // Atualizar o índice do card atual para exibir o card anterior (caso exista)
-                setCurrentCardIndex((prevIndex: number) =>
-                    prevIndex >= cards.length - 1
-                        ? Math.max(prevIndex - 1, 0)
-                        : prevIndex
-                );
+            const updatedCards = cards.filter((card) => card.id !== cardId);
 
-                // Fazer a requisição DELETE à API
-                await api.delete(`/cards/${cardId}`, {
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                    },
-                });
-
-                // Remover o card localmente
-                const updatedCards = cards.filter(
-                    (card: any) => card.id !== cardId
-                );
-                setCards(updatedCards);
-            }
+            setCards(updatedCards);
+            localStorage.setItem("cards", JSON.stringify(updatedCards));
         } catch (error) {
-            console.error("Erro ao remover o card:", error);
+            console.error("Erro ao excluir o card:", error);
         }
     };
 
-    const updateCard = async () => {
-        try {
-            const updatedCard = {
-                ...cards[currentCardIndex],
-                titulo: title,
-                conteudo: content,
-            };
+    useEffect(() => {
+        if (token) {
+            fetchCards();
+        }
+    }, [token]);
 
-            // Fazer a requisição PUT para atualizar o card na API
+    const updateCard = async (updatedCard: any) => {
+        try {
             await api.put(`/cards/${updatedCard.id}`, updatedCard, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
             });
 
-            // Atualizar o card no estado local
-            const updatedCards = [...cards];
-            updatedCards[currentCardIndex] = updatedCard;
+            const updatedCards = cards.map((card) =>
+                card.id === updatedCard.id ? updatedCard : card
+            );
+
             setCards(updatedCards);
-
-            // Atualizar o armazenamento local
             localStorage.setItem("cards", JSON.stringify(updatedCards));
-
-            setEditMode(false); // Voltar para o modo de visualização
+            setEditMode(false);
         } catch (error) {
             console.error("Erro ao atualizar o card:", error);
         }
