@@ -25,7 +25,6 @@ cardsRouter.put(
     isValidTokenMiddleware,
     validateIdMiddleware,
     verifyIdBodyMiddleware,
-    validateSchema(updateCardController),
     updateCardController
 );
 cardsRouter.delete(

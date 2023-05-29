@@ -7,7 +7,9 @@ import { cardsRouter } from "./routes/cards.routes";
 
 const app: Application = express();
 app.use(express.json());
+let cors = require("cors");
 
+app.use(cors());
 app.use("/login", sessionRouter);
 app.use("/cards", cardsRouter);
 
