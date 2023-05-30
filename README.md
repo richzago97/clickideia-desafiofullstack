@@ -3,15 +3,17 @@ Documentação do Projeto Full Stack
 
 Introdução
 --------------
-Esta documentação tem como objetivo fornecer instruções completas para iniciar o seu projeto full stack utilizando as tecnologias React, TypeScript, Node.js, Express e PostgreSQL. O projeto envolve a criação de uma API para persistência de dados e um frontend para um quadro de Kanban. Serão utilizadas as bibliotecas TypeORM para a camada de acesso a dados e o PostgresSQL como banco de dados.
+Esta documentação tem como objetivo fornecer instruções completas para iniciar o seu projeto full stack utilizando as tecnologias React, TypeScript, Node.js, Express e PostgreSQL. O projeto envolve a criação de uma API para persistência de dados e um frontend para um quadro de Kanban. Serão utilizadas as bibliotecas TypeORM para a camada de acesso a dados e o PostgresSQL como banco de dados. O projeto também está dockerizado para facilitar a execução e o ambiente de desenvolvimento.
 
 Pré-requisitos
 --------------
 Antes de iniciar o projeto, verifique se você tem as seguintes ferramentas instaladas em seu sistema:
 
-1. Node.js (versão 14 ou superior)
-2. Gerenciador de pacotes Yarn ou NPM
-3. PostgreSQL (instalado e configurado corretamente)
+1. Git(opcional, se você desejar clonar o repositório)
+2. Node.js (versão 14 ou superior)
+3. Gerenciador de pacotes Yarn ou NPM
+4. PostgreSQL (instalado e configurado corretamente)
+5. Docker (instalado e configurado corretamente)
 
 Setup do Projeto
 --------------
@@ -30,40 +32,33 @@ Configurando o Banco de Dados
 --------------
 Antes de iniciar o backend, você precisa configurar o banco de dados PostgreSQL.
 
-1. Abra o arquivo `.env` no diretório `backend`.
-2. Preencha as seguintes variáveis de ambiente com as informações do seu banco de dados:
+1. Abra o arquivo `.env` no diretório `BACK`.
+2.Preencha as seguintes variáveis de ambiente com as informações necessárias:
 
-   - POSTGRES_HOST: O host do banco de dados (exemplo: localhost)
-   - PGPORT: A porta utilizada pelo PostgreSQL (exemplo: 5432)
-   - POSTGRES_USER: O nome de usuário do PostgreSQL
-   - POSTGRES_PASSWORD: A senha do usuário do PostgreSQL
-   - POSTGRES_DB: O nome do banco de dados
+   -PORT: Porta para execução do servidor (exemplo: 5000)
+   -expiresIn: Tempo de expiração do token (exemplo: "1h")
+   -SECRET_KEY: Chave secreta para geração de tokens
+   -login: Exemplo de variável de ambiente para login
+   -senha: Exemplo de variável de ambiente para senha
+   -POSTGRES_HOST: Host do banco de dados PostgreSQL (exemplo: postgres)
+   -POSTGRES_USER: Usuário do banco de dados PostgreSQL (exemplo: postgres)
+   -POSTGRES_PASSWORD: Senha do banco de dados PostgreSQL
+   -POSTGRES_DB: Nome do banco de dados PostgreSQL (exemplo: kanban)
 
 3. Salve o arquivo `.env`.
 
-Executando as Migrations
---------------
-O TypeORM será utilizado para executar as migrations e criar as tabelas necessárias no banco de dados.
+Executando o Projeto com Docker Compose
+---------------------------------------
+Certifique-se de ter o Docker instalado e em execução em seu sistema.
 
-1. Certifique-se de que o banco de dados PostgreSQL esteja em execução.
-2. No diretório `backend`, execute o comando `yarn typeorm migration:run -d src/data-source.ts` para executar as migrations e criar as tabelas.
+No diretório raiz do projeto, execute o seguinte comando para construir e iniciar os containers:
 
-Iniciando o Backend
---------------
-1. No diretório `backend`, execute o comando `yarn dev` ou `npm run dev` para iniciar o backend.
-2. O servidor estará disponível em `http://localhost:5000`.
+`docker-compose up --build`
+Isso irá construir e iniciar os containers do backend e frontend.
 
-Frontend
---------------
-1. Navegue até a pasta `frontend` do projeto através do terminal.
-2. Execute o comando `yarn` ou `npm install` para instalar as dependências do frontend.
+Aguarde até que a construção e a inicialização dos containers sejam concluídas.
 
-Iniciando o Frontend
---------------
-1. No diretório `FRONT`, execute o comando `yarn start` ou `npm start` para iniciar o frontend.
-2. O aplicativo será aberto em
-
- seu navegador padrão e estará disponível em `http://localhost:3000`.
+O frontend estará disponível em http://localhost:3000 e o backend em http://localhost:5000.
 
 API Endpoints
 --------------
