@@ -7,7 +7,7 @@ services:
          context: .
          dockerfile: front.Dockerfile
       ports:
-         - 3000:3001
+         - 3000:3000
       command: bash -c "yarn install && yarn start"
       volumes:
          - ./FRONT/:/app
@@ -18,12 +18,12 @@ services:
          context: .
          dockerfile: back.Dockerfile
       ports:
-         - 5000:5001
+         - 5000:5000
       env_file:
          - ./BACK/.env
-      # depends_on:
-      #    postgres:
-      #       condition: service_healthy
+      depends_on:
+         postgres:
+            condition: service_healthy
       command: bash -c "npm install && yarn typeorm migration:run -d src/data-source && npm run dev"
       volumes:
          - ./BACK/:/app
@@ -32,7 +32,7 @@ services:
       container_name: db
       image: postgres:latest
       ports:
-         - 5431:5432
+         - 5432:5432
       env_file:
          - ./BACK/.env
       healthcheck:

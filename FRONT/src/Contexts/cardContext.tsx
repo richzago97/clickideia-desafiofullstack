@@ -61,8 +61,8 @@ export const CardsProvider = ({ children }: IProvider) => {
       const login = async () => {
          try {
             const response = await api.post("/login", {
-               login: "richard",
-               senha: "1234",
+               login: "clickideia",
+               senha: "clk@123",
             });
 
             const token = response.data.token;

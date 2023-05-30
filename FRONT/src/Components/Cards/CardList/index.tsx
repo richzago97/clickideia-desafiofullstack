@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Container } from "./style";
 import { BsTrashFill } from "react-icons/bs";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
+import { AiOutlineSave, AiOutlineClose } from "react-icons/ai";
 import { FiEdit } from "react-icons/fi";
 import { CardsContext } from "../../../Contexts/cardContext";
 import { CardProps } from "../../../Interfaces/cards.interface";
@@ -48,6 +49,10 @@ export const CardList: React.FC<CardListProps> = ({ list }) => {
       setEditedCardContent(card.content);
       setEditedCardTitle(card.title);
       setEditMode(card);
+   };
+
+   const handleCancel = () => {
+      setEditMode(false);
    };
 
    const handleMoveToNextList = () => {
@@ -116,7 +121,11 @@ export const CardList: React.FC<CardListProps> = ({ list }) => {
                                        setEditMode(null);
                                     }}
                                  >
-                                    Salvar
+                                    <AiOutlineSave />
+                                 </button>
+
+                                 <button onClick={handleCancel}>
+                                    <AiOutlineClose />
                                  </button>
                               </div>
                            ) : (
