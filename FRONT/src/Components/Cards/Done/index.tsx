@@ -1,5 +1,5 @@
 import { CardList } from "../CardList";
 
 export const DoneCard = () => {
-    return <CardList list="Done" />;
+   return <CardList list="Done" />;
 };
