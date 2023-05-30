@@ -11,7 +11,7 @@ Antes de iniciar o projeto, verifique se você tem as seguintes ferramentas inst
 
 1. Git (opcional, se você desejar clonar o repositório)
 2. Node.js (versão 14 ou superior)
-3. Gerenciador de pacotes Yarn ou NPM
+3. Gerenciador de pacotes NPM
 4. PostgreSQL (instalado e configurado corretamente)
 5. Docker (instalado e configurado corretamente)
 
