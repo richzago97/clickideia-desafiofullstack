@@ -7,14 +7,14 @@ import { Container } from "./style";
 import { ToDoCard } from "./To Do";
 
 export const Cards = () => {
-    return (
-        <CardsProvider>
-            <Container>
-                <CreateCard />
-                <ToDoCard />
-                <DoingCard />
-                <DoneCard />
-            </Container>
-        </CardsProvider>
-    );
+   return (
+      <CardsProvider>
+         <Container>
+            <CreateCard />
+            <ToDoCard />
+            <DoingCard />
+            <DoneCard />
+         </Container>
+      </CardsProvider>
+   );
 };
