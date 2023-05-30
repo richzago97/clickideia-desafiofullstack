@@ -91,7 +91,7 @@ export const CardList: React.FC<CardListProps> = ({ list }) => {
                            {editMode &&
                            editMode.id ===
                               filteredCards[currentCardIndex].id ? (
-                              <div className="edit">
+                              <div className="editContainer">
                                  <input
                                     type="text"
                                     value={editedCardTitle}
@@ -125,10 +125,10 @@ export const CardList: React.FC<CardListProps> = ({ list }) => {
                                     <span>
                                        {filteredCards[currentCardIndex].titulo}
                                     </span>
-
                                     <FiEdit onClick={handleEditCard} />
+                                    <hr></hr>
                                  </div>
-                                 <div>
+                                 <div className="content">
                                     <span>
                                        {
                                           filteredCards[currentCardIndex]
@@ -150,16 +150,20 @@ export const CardList: React.FC<CardListProps> = ({ list }) => {
                                  ? "Done"
                                  : "Doing"}
                            </button>
-                           <BsTrashFill
-                              onClick={() =>
-                                 handleRemoveCard(
-                                    filteredCards[currentCardIndex].id
-                                 )
-                              }
-                           />
+
                            <button onClick={goToNextCard}>
                               <BiChevronRight />
                            </button>
+
+                           <div className="trash">
+                              <BsTrashFill
+                                 onClick={() =>
+                                    handleRemoveCard(
+                                       filteredCards[currentCardIndex].id
+                                    )
+                                 }
+                              />
+                           </div>
                         </div>
                      </>
                   ) : (
