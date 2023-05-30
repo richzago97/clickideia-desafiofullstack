@@ -59,21 +59,21 @@ export const CardList: React.FC<CardListProps> = ({ list }) => {
             c.id === card.id ? updatedCard : c
          );
          setCards(updatedCards);
-         setCurrentCardIndex(0); 
+         setCurrentCardIndex(0);
       } else if (list === "Doing") {
          const updatedCard = { ...card, lista: "Done" };
          const updatedCards = cards.map((c: CardProps) =>
             c.id === card.id ? updatedCard : c
          );
          setCards(updatedCards);
-         setCurrentCardIndex(0); 
+         setCurrentCardIndex(0);
       } else if (list === "Done") {
          const updatedCard = { ...card, lista: "Doing" };
          const updatedCards = cards.map((c: CardProps) =>
             c.id === card.id ? updatedCard : c
          );
          setCards(updatedCards);
-         setCurrentCardIndex(0); 
+         setCurrentCardIndex(0);
       }
    };
 
