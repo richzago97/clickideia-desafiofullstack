@@ -26,7 +26,6 @@ export const CreateCard = () => {
             lista: "To Do",
          };
 
-
          await createCard(card);
 
          setCards([card]);
