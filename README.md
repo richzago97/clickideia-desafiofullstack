@@ -36,8 +36,10 @@ Antes de iniciar o projeto, você precisa configurar o banco de dados PostgreSQL
    PORT=<Porta para execução do servidor (exemplo: 5000)>
    expiresIn=<Tempo de expiração do token (exemplo: 3600)>
    SECRET_KEY=<Chave secreta para geração de tokens>
+   
    login=<Exemplo de variável de ambiente para login>
    senha=<Exemplo de variável de ambiente para senha>
+   
    POSTGRES_HOST=<Host do banco de dados PostgreSQL (exemplo: postgres)>
    POSTGRES_USER=<Usuário do banco de dados PostgreSQL (exemplo: postgres)>
    POSTGRES_PASSWORD=<Senha do banco de dados PostgreSQL>
