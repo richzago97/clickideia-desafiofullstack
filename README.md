@@ -13,7 +13,7 @@ Antes de iniciar o projeto, verifique se você tem as seguintes ferramentas inst
 2. Node.js (versão 14 ou superior)
 3. Gerenciador de pacotes NPM
 4. PostgreSQL (instalado e configurado corretamente)
-5. Docker (instalado e configurado corretamente)
+5. Docker e Docker-compose (instalado e configurado corretamente)
 
 Configurando o Banco de Dados
 -----------------------------
@@ -42,7 +42,7 @@ Antes de iniciar o projeto, você precisa configurar o banco de dados PostgreSQL
 
 Executando o Projeto com Docker Compose
 ---------------------------------------
-Certifique-se de ter o Docker instalado e em execução em seu sistema.
+Certifique-se de ter o Docker e o Docker-compose instalado e em execução em seu sistema.
 
 No diretório raiz do projeto, execute o seguinte comando para construir e iniciar os containers:
 
