@@ -79,6 +79,4 @@ Observação: Substitua `{id}` pelo ID real do card desejado.
 
 Conclusão
 --------------
-Agora você possui um projeto full stack em funcionamento, com um backend desenvolvido em Node.js e Express, um banco de dados PostgreSQL para persistência de dados e um frontend construído em React e TypeScript. Você pode utilizar esse projeto como ponto de partida para desenvolver seu quadro de Kanban e adicionar recursos adicionais conforme necessário.
-
-Divirta-se codificando!
+Agora você possui um projeto full stack em funcionamento, com um backend desenvolvido em Node.js e Express, um banco de dados PostgreSQL para persistência de dados e um frontend construído em React e TypeScript.
