@@ -9,7 +9,7 @@ Pré-requisitos
 --------------
 Antes de iniciar o projeto, verifique se você tem as seguintes ferramentas instaladas em seu sistema:
 
-1. Git(opcional, se você desejar clonar o repositório)
+1. Git (opcional, se você desejar clonar o repositório)
 2. Node.js (versão 14 ou superior)
 3. Gerenciador de pacotes Yarn ou NPM
 4. PostgreSQL (instalado e configurado corretamente)
@@ -22,15 +22,10 @@ Siga as etapas abaixo para configurar o projeto:
 1. Clone o repositório do projeto em seu ambiente local.
 2. Navegue até o diretório raiz do projeto através do terminal.
 
-Backend
---------------
-
-1. Navegue até a pasta `BACK` do projeto através do terminal.
-2. Execute o comando `yarn` ou `npm install` para instalar as dependências do backend.
 
 Configurando o Banco de Dados
---------------
-Antes de iniciar o backend, você precisa configurar o banco de dados PostgreSQL.
+-----------------------------
+Antes de iniciar o projeto, você precisa configurar o banco de dados PostgreSQL.
 
 1. Abra o arquivo `.env` no diretório `BACK`.
 2.Preencha as seguintes variáveis de ambiente com as informações necessárias:
