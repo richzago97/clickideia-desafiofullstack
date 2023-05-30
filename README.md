@@ -40,6 +40,8 @@ Antes de iniciar o projeto, você precisa configurar o banco de dados PostgreSQL
 
 3. Salve o arquivo `.env`.
 
+Atenção: Certifique-se que a porta 5432 já não está em uso, o docker irá rodar na porta padrão do POSTGRESQL.
+
 Executando o Projeto com Docker Compose
 ---------------------------------------
 Certifique-se de ter o Docker e o Docker-compose instalado e em execução em seu sistema.
