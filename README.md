@@ -15,26 +15,18 @@ Antes de iniciar o projeto, verifique se você tem as seguintes ferramentas inst
 4. PostgreSQL (instalado e configurado corretamente)
 5. Docker (instalado e configurado corretamente)
 
-Setup do Projeto
---------------
-Siga as etapas abaixo para configurar o projeto:
-
-1. Clone o repositório do projeto em seu ambiente local.
-2. Navegue até o diretório raiz do projeto através do terminal.
-
-
 Configurando o Banco de Dados
 -----------------------------
 Antes de iniciar o projeto, você precisa configurar o banco de dados PostgreSQL.
 ## Backend
 
-1. Abra o arquivo `.env` no diretório `backend`.
+1. Abra o arquivo `.env` no diretório `BACK`.
 
 2. Preencha as seguintes variáveis de ambiente com as informações necessárias:
 
    ```
    PORT=<Porta para execução do servidor (exemplo: 5000)>
-   expiresIn=<Tempo de expiração do token (exemplo: 3600)>
+   expiresIn=<Tempo de expiração do token (exemplo: "1h")>
    SECRET_KEY=<Chave secreta para geração de tokens>
    
    login=<Exemplo de variável de ambiente para login>
