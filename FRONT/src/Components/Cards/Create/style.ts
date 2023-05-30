@@ -5,9 +5,9 @@ export const Container = styled.div`
     flex-direction: column;
     padding: 20px;
     align-items: center;
-    background-color: #f4f4f4; /* Cor de fundo */
+    background-color: #f4f4f4;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
     h2 {
         margin-bottom: 10px;
