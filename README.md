@@ -58,17 +58,6 @@ Frontend
 1. Navegue até a pasta `frontend` do projeto através do terminal.
 2. Execute o comando `yarn` ou `npm install` para instalar as dependências do frontend.
 
-Configurando as Variáveis de Ambiente
---------------
-1. Abra o arquivo `.env` no diretório `frontend`.
-2. Preencha as seguintes variáveis de ambiente com as informações necessárias:
-
-   - REACT_APP_API_URL: URL da API backend (exemplo: http://localhost:5000)
-   - REACT_APP_TOKEN_EXPIRATION: Tempo de expiração do token (exemplo: 3600)
-   - REACT_APP_SECRET_KEY: Chave secreta para geração de tokens
-
-3. Salve o arquivo `.env`.
-
 Iniciando o Frontend
 --------------
 1. No diretório `frontend`, execute o comando `yarn start` ou `npm start` para iniciar o frontend.
