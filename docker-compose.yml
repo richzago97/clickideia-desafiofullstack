@@ -1,0 +1,43 @@
+version: "3.9"
+
+services:
+   web:
+      container_name: front
+      build:
+         context: .
+         dockerfile: front.Dockerfile
+      ports:
+         - 3000:3001
+      command: bash -c "yarn install && yarn start"
+      volumes:
+         - ./FRONT/:/app
+
+   api:
+      container_name: back
+      build:
+         context: .
+         dockerfile: back.Dockerfile
+      ports:
+         - 5000:5001
+      env_file:
+         - ./BACK/.env
+      # depends_on:
+      #    postgres:
+      #       condition: service_healthy
+      command: bash -c "npm install && yarn typeorm migration:run -d src/data-source && npm run dev"
+      volumes:
+         - ./BACK/:/app
+
+   postgres:
+      container_name: db
+      image: postgres:latest
+      ports:
+         - 5431:5432
+      env_file:
+         - ./BACK/.env
+      healthcheck:
+         test: ["CMD-SHELL", "pg_isready -U postgres -d clickideia"]
+         interval: 10s
+         timeout: 5s
+         retries: 5
+         start_period: 5s
