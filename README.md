@@ -77,6 +77,17 @@ A API possui os seguintes endpoints:
 
 Observação: Substitua `{id}` pelo ID real do card desejado.
 
+Observação
+--------------
+Este projeto foi entregue de forma incompleta devido a algumas dificuldades encontradas durante o desenvolvimento. A seguir estão as principais áreas que não foram concluídas:
+
+- A renderização automática dos cards após a criação, edição ou exclusão foi resolvida utilizando `window.location.reload()`, resultando em um recarregamento completo da página. Essa solução foi adotada como alternativa temporária devido a dificuldades encontradas em implementar a atualização dinâmica dos cards na tela.
+- Ao atualizar a página, os cards que estavam nas colunas "Doing" ou "Done" retornam à coluna "To Do". Isso ocorre devido à falta de persistência dos dados no backend. No entanto, a estrutura do projeto permite a implementação dessa funcionalidade no futuro.
+
+Apesar dessas limitações, este projeto pode ser utilizado como ponto de partida para o desenvolvimento do quadro de Kanban completo, adicionando as funcionalidades faltantes e aprimorando-o de acordo com as necessidades do usuário.
+
+Agradeço sua compreensão e oportunidade de participar deste desafio.
+
 Conclusão
 --------------
 Agora você possui um projeto full stack em funcionamento, com um backend desenvolvido em Node.js e Express, um banco de dados PostgreSQL para persistência de dados e um frontend construído em React e TypeScript.
