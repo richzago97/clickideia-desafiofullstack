@@ -26,19 +26,23 @@ Siga as etapas abaixo para configurar o projeto:
 Configurando o Banco de Dados
 -----------------------------
 Antes de iniciar o projeto, você precisa configurar o banco de dados PostgreSQL.
+## Backend
 
-1. Abra o arquivo `.env` no diretório `BACK`.
-2.Preencha as seguintes variáveis de ambiente com as informações necessárias:
+1. Abra o arquivo `.env` no diretório `backend`.
 
-   -PORT: Porta para execução do servidor (exemplo: 5000)
-   -expiresIn: Tempo de expiração do token (exemplo: "1h")
-   -SECRET_KEY: Chave secreta para geração de tokens
-   -login: Exemplo de variável de ambiente para login
-   -senha: Exemplo de variável de ambiente para senha
-   -POSTGRES_HOST: Host do banco de dados PostgreSQL (exemplo: postgres)
-   -POSTGRES_USER: Usuário do banco de dados PostgreSQL (exemplo: postgres)
-   -POSTGRES_PASSWORD: Senha do banco de dados PostgreSQL
-   -POSTGRES_DB: Nome do banco de dados PostgreSQL (exemplo: kanban)
+2. Preencha as seguintes variáveis de ambiente com as informações necessárias:
+
+   ```
+   PORT=<Porta para execução do servidor (exemplo: 5000)>
+   expiresIn=<Tempo de expiração do token (exemplo: 3600)>
+   SECRET_KEY=<Chave secreta para geração de tokens>
+   login=<Exemplo de variável de ambiente para login>
+   senha=<Exemplo de variável de ambiente para senha>
+   POSTGRES_HOST=<Host do banco de dados PostgreSQL (exemplo: postgres)>
+   POSTGRES_USER=<Usuário do banco de dados PostgreSQL (exemplo: postgres)>
+   POSTGRES_PASSWORD=<Senha do banco de dados PostgreSQL>
+   POSTGRES_DB=<Nome do banco de dados PostgreSQL (exemplo: kanban)>
+   ```
 
 3. Salve o arquivo `.env`.
 
