@@ -46,7 +46,7 @@ Certifique-se de ter o Docker e o Docker-compose instalado e em execução em se
 
 No diretório raiz do projeto, execute o seguinte comando para construir e iniciar os containers:
 
-`docker-compose up --build`
+```docker-compose up --build```
 Isso irá construir e iniciar os containers do backend e frontend.
 
 Aguarde até que a construção e a inicialização dos containers sejam concluídas.
