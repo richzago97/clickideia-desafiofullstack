@@ -1,4 +1,4 @@
-Documentação do Projeto Full Stack - Quadro de Kanban
+Documentação do Projeto Full Stack
 ===========================================
 
 Introdução
