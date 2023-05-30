@@ -23,7 +23,7 @@ Siga as etapas abaixo para configurar o projeto:
 Backend
 --------------
 
-1. Navegue até a pasta `backend` do projeto através do terminal.
+1. Navegue até a pasta `BACK` do projeto através do terminal.
 2. Execute o comando `yarn` ou `npm install` para instalar as dependências do backend.
 
 Configurando o Banco de Dados
@@ -60,7 +60,7 @@ Frontend
 
 Iniciando o Frontend
 --------------
-1. No diretório `frontend`, execute o comando `yarn start` ou `npm start` para iniciar o frontend.
+1. No diretório `FRONT`, execute o comando `yarn start` ou `npm start` para iniciar o frontend.
 2. O aplicativo será aberto em
 
  seu navegador padrão e estará disponível em `http://localhost:3000`.
