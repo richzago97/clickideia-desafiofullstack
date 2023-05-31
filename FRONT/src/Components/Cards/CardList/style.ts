@@ -8,7 +8,7 @@ export const Container = styled.div`
    background-color: #f4f4f4;
    border-radius: 8px;
    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-   height: 300px;
+   height: 320px;
    width: 150px;
 
    .edit {
@@ -34,6 +34,81 @@ export const Container = styled.div`
       border: none;
       height: 1px;
       background-color: #ccc;
+   }
+
+   .inputEdit {
+      margin-bottom: 10px;
+      padding: 4px;
+      width: 100%;
+   }
+
+   .textAreaEdit {
+      margin-bottom: 10px;
+      padding: 4px;
+      width: 100%;
+      height: 150px;
+   }
+
+   .iconsEdit {
+      display: flex;
+      justify-content: space-between;
+   }
+
+   .buttonEdit {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background-color: #fff;
+      border: 1px solid #555;
+      margin-right: 8px;
+   }
+
+   .buttonEdit:hover {
+      background-color: #f2f2f2;
+   }
+
+   .buttonEdit:focus {
+      outline: none;
+   }
+
+   .buttonEdit svg {
+      font-size: 14px;
+      color: #555;
+   }
+
+   .buttonCancel {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background-color: #fff;
+      border: 1px solid #555;
+   }
+
+   .buttonCancel:hover {
+      background-color: #f2f2f2;
+   }
+
+   .buttonCancel:focus {
+      outline: none;
+   }
+
+   .buttonCancel svg {
+      font-size: 14px;
+      color: #555;
    }
 
    .content {

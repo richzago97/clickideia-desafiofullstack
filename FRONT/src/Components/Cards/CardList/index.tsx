@@ -98,6 +98,7 @@ export const CardList: React.FC<CardListProps> = ({ list }) => {
                               filteredCards[currentCardIndex].id ? (
                               <div className="editContainer">
                                  <input
+                                    className="inputEdit"
                                     type="text"
                                     value={editedCardTitle}
                                     onChange={(e) =>
@@ -105,28 +106,36 @@ export const CardList: React.FC<CardListProps> = ({ list }) => {
                                     }
                                  />
                                  <textarea
+                                    className="textAreaEdit"
                                     value={editedCardContent}
                                     onChange={(e) =>
                                        setEditedCardContent(e.target.value)
                                     }
                                  />
-                                 <button
-                                    onClick={() => {
-                                       const updatedCard = {
-                                          ...editMode,
-                                          titulo: editedCardTitle,
-                                          conteudo: editedCardContent,
-                                       };
-                                       updateCard(updatedCard);
-                                       setEditMode(null);
-                                    }}
-                                 >
-                                    <AiOutlineSave />
-                                 </button>
 
-                                 <button onClick={handleCancel}>
-                                    <AiOutlineClose />
-                                 </button>
+                                 <div className="iconsEdit">
+                                    <button
+                                       className="buttonEdit"
+                                       onClick={() => {
+                                          const updatedCard = {
+                                             ...editMode,
+                                             titulo: editedCardTitle,
+                                             conteudo: editedCardContent,
+                                          };
+                                          updateCard(updatedCard);
+                                          setEditMode(null);
+                                       }}
+                                    >
+                                       <AiOutlineSave />
+                                    </button>
+
+                                    <button
+                                       className="buttonCancel"
+                                       onClick={handleCancel}
+                                    >
+                                       <AiOutlineClose />
+                                    </button>
+                                 </div>
                               </div>
                            ) : (
                               <>
