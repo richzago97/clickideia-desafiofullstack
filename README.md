@@ -3,7 +3,7 @@ Documentação do Projeto Full Stack
 
 Introdução
 --------------
-Esta documentação tem como objetivo fornecer instruções completas para iniciar o seu projeto full stack utilizando as tecnologias React, TypeScript, Node.js, Express e PostgreSQL. O projeto envolve a criação de uma API para persistência de dados e um frontend para um quadro de Kanban. Serão utilizadas as bibliotecas TypeORM para a camada de acesso a dados e o PostgresSQL como banco de dados. O projeto também está dockerizado para facilitar a execução e o ambiente de desenvolvimento.
+Esta documentação tem como objetivo fornecer instruções completas para iniciar o seu projeto full stack utilizando as tecnologias React, TypeScript, Node.js, Express, PHP 8, Laravel e PostgreSQL. O projeto envolve a criação de uma API para persistência de dados e um frontend para um quadro de Kanban. Serão utilizadas as bibliotecas TypeORM para a camada de acesso a dados e o PostgresSQL como banco de dados. O projeto também está dockerizado para facilitar a execução e o ambiente de desenvolvimento.
 
 Pré-requisitos
 --------------
@@ -73,6 +73,7 @@ Observação
 --------------
 Este projeto foi entregue de forma incompleta devido a algumas dificuldades encontradas durante o desenvolvimento. A seguir estão as principais áreas que não foram concluídas:
 
+- O Back criado em PHP + Laravel está na pasta BACK2, não houve implementação com o front.
 - A renderização automática dos cards após a criação, edição ou exclusão foi resolvida utilizando `window.location.reload()`, resultando em um recarregamento completo da página. Essa solução foi adotada como alternativa temporária devido a dificuldades encontradas em implementar a atualização dinâmica dos cards na tela.
 - Ao atualizar a página, os cards que estavam nas colunas "Doing" ou "Done" retornam à coluna "To Do". Isso ocorre devido à falta de persistência dos dados no backend. No entanto, a estrutura do projeto permite a implementação dessa funcionalidade no futuro.
 
@@ -82,4 +83,4 @@ Agradeço sua compreensão e oportunidade de participar deste desafio.
 
 Conclusão
 --------------
-Agora você possui um projeto full stack em funcionamento, com um backend desenvolvido em Node.js e Express, um banco de dados PostgreSQL para persistência de dados e um frontend construído em React e TypeScript.
+Agora você possui um projeto full stack em funcionamento, dockeirizado, com um backend desenvolvido em Node.js e Express, um banco de dados PostgreSQL para persistência de dados e um frontend construído em React e TypeScript. Também possui no BACK2 a api desenvolvida em PHP + Laravel.
