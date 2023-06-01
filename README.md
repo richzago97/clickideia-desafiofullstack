@@ -57,6 +57,30 @@ Executando o Projeto com Docker Compose
 ---------------------------------------
 Certifique-se de ter o Docker e o Docker-compose instalado e em execução em seu sistema.
 
+Certifique-se que a porta 5432 já não está em uso, você pode conferir com esses comandos:
+
+### Windows
+   ```
+   netstat -ano | findstr :5432
+
+   ```
+Caso estiver, você pode usar esse comando para encerrar o processo atraves do pid(numero):
+   ```
+   taskkill /PID <PID>
+
+   ```
+
+### Linux
+
+   ```
+   sudo lsof -i :5432
+   ```
+   Caso estiver, você pode usar esse comando para encerrar o processo atraves do pid(numero):
+   ```
+   sudo kill 356
+
+   ```
+
 No diretório raiz do projeto, execute o seguinte comando para construir e iniciar os containers:
 
 ```
