@@ -77,7 +77,7 @@ Caso estiver, você pode usar esse comando para encerrar o processo atraves do p
    ```
 
    ```
-   sudo kill 356
+   sudo kill <PID>
 
    ```
    
