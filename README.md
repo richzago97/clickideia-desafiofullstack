@@ -75,11 +75,12 @@ Caso estiver, você pode usar esse comando para encerrar o processo atraves do p
    ```
    sudo lsof -i :5432
    ```
-   Caso estiver, você pode usar esse comando para encerrar o processo atraves do pid(numero):
+
    ```
    sudo kill 356
 
    ```
+   
 
 No diretório raiz do projeto, execute o seguinte comando para construir e iniciar os containers:
 
