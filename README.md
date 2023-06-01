@@ -20,7 +20,7 @@ Configurando o Banco de Dados
 Antes de iniciar o projeto, você precisa configurar o banco de dados PostgreSQL.
 ## Backend
 
-1. Abra o arquivo `.env` no diretório `BACK`.
+1. Renomeia o arquivo `.env.example` para `.env` no diretório `BACK`.
 
 2. Preencha as seguintes variáveis de ambiente com as informações necessárias:
 
@@ -41,6 +41,17 @@ Antes de iniciar o projeto, você precisa configurar o banco de dados PostgreSQL
 3. Salve o arquivo `.env`.
 
 Atenção: Certifique-se que a porta 5432 já não está em uso, o docker irá rodar na porta padrão do POSTGRESQL.
+
+## Front End
+
+1. Renomeia o arquivo `.env.example` para `.env` no diretório `FRONT`.
+
+2. Preencha as seguintes variáveis de ambiente com as informações necessárias:
+    ```
+       login=<o mesmo login do back>
+       senha=<a mesma senha do back>
+    ```
+
 
 Executando o Projeto com Docker Compose
 ---------------------------------------
