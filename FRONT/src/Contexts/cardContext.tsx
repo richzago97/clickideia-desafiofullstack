@@ -21,6 +21,7 @@ interface CardsContextData {
    deleteCard: (card: string) => void;
    setEditMode: (card: any) => any;
    updateCard: (card: any) => void;
+   handleMoveToNextList: (card: any) => void;
 }
 
 export const CardsContext = createContext<CardsContextData>(
@@ -65,13 +66,13 @@ export const CardsProvider = ({ children }: IProvider) => {
                senha: process.env.senha,
             });
             const token = response.data.token;
-            
+
             setToken(token);
          } catch (error) {
             console.error("Erro ao fazer login: ", error);
          }
       };
-      
+
       login();
 
       if (token) {
@@ -149,6 +150,53 @@ export const CardsProvider = ({ children }: IProvider) => {
          console.error("Erro ao atualizar o card:", error);
       }
    };
+   const handleMoveToNextList = async () => {
+      const currentCard = cards[currentCardIndex];
+
+      if (!currentCard) {
+         console.error("Nenhum card encontrado");
+         return;
+      }
+
+      let updatedCard: CardProps;
+
+      if (currentCard.lista === "To Do") {
+         updatedCard = { ...currentCard, lista: "Doing" };
+      } else if (currentCard.lista === "Doing") {
+         updatedCard = { ...currentCard, lista: "Done" };
+      } else if (currentCard.lista === "Done") {
+         updatedCard = { ...currentCard, lista: "To Do" };
+      } else {
+         // Caso padrão: atribuir o valor atual do card
+         updatedCard = currentCard;
+      }
+
+      try {
+         const response = await api.put(
+            `/cards/${currentCard.id}`,
+            {
+               titulo: updatedCard.titulo,
+               conteudo: updatedCard.conteudo,
+               lista: updatedCard.lista,
+            },
+            {
+               headers: {
+                  Authorization: `Bearer ${token}`,
+               },
+            }
+         );
+
+         if (response.status === 200) {
+            const updatedCards = cards.map((card: CardProps) =>
+               card.id === currentCard.id ? updatedCard : card
+            );
+
+            setCards(updatedCards);
+         }
+      } catch (error) {
+         console.error("Erro ao mover o card para a próxima lista:", error);
+      }
+   };
 
    return (
       <CardsContext.Provider
@@ -170,6 +218,7 @@ export const CardsProvider = ({ children }: IProvider) => {
             createCard,
             deleteCard,
             updateCard,
+            handleMoveToNextList,
          }}
       >
          {children}
