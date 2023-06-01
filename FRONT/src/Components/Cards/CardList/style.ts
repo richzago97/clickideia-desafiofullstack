@@ -116,9 +116,9 @@ export const Container = styled.div`
       height: 80%;
       width: 100%;
       justify-content: center;
-      padding-right: 8px; /* Evita que a barra de rolagem cubra o conteúdo */
-      overflow-y: auto; /* Adiciona a barra de rolagem vertical */
-      word-wrap: break-word; /* Quebra o texto em várias linhas */
+      padding-right: 8px; 
+      overflow-y: auto; 
+      word-wrap: break-word; 
    }
 
    .icons {
@@ -126,6 +126,7 @@ export const Container = styled.div`
       justify-content: space-between;
       align-items: center;
       margin-bottom: 16px;
+      width: 95px;
    }
 
    .icons button {
@@ -151,11 +152,16 @@ export const Container = styled.div`
 
    .trash {
       position: relative;
-      left: 30px;
-      top: 1px;
+      right: 60px;
+      top: 40px;
    }
 
    .trash svg {
       cursor: pointer;
+      height: 18px;
+   }
+
+   h2 {
+      font-family: "Great Vibes", cursive;
    }
 `;

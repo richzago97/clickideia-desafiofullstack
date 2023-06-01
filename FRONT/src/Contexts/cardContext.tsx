@@ -61,18 +61,17 @@ export const CardsProvider = ({ children }: IProvider) => {
       const login = async () => {
          try {
             const response = await api.post("/login", {
-               login: "clickideia",
-               senha: "clk@123",
+               login: process.env.login,
+               senha: process.env.senha,
             });
-
             const token = response.data.token;
-
+            
             setToken(token);
          } catch (error) {
             console.error("Erro ao fazer login: ", error);
          }
       };
-
+      
       login();
 
       if (token) {
