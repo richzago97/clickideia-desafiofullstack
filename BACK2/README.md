@@ -69,6 +69,12 @@ php artisan serve
 
 A aplicação estará disponível em `http://localhost:8000`.
 
+Ou se você preferir, pode escolher uma porta para rodar:
+
+```bash
+    php artisan serve --port=NUMERODAPORTA 
+```
+
 ## Passo 7: Testar as rotas
 
 Agora você pode testar as rotas da aplicação usando uma ferramenta como o Postman ou o cURL. Aqui estão as URLs das rotas disponíveis:
