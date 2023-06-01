@@ -81,6 +81,7 @@ Caso estiver, você pode usar esse comando para encerrar o processo atraves do p
 
    ```
    
+### Executando o Projeto
 
 No diretório raiz do projeto, execute o seguinte comando para construir e iniciar os containers:
 
